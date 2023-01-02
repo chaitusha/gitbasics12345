@@ -1,0 +1,45 @@
+<html>
+  <head>
+    
+    
+  </head>
+  <body>
+     <form action="">
+        <!-- Student Name:<input type="text"><br><br>
+        Course Name:<input type="text"><br><br>
+        Location:<input type="text"><br><br>
+        <input type="submit" value="Register"> -->
+
+        <label for="">user name:</label>
+        <input type="text" id="uname">
+         <br><br>
+        <label for="">password:</label>
+        <input type="password" id="pwd">
+        <br><br>
+
+        <input type="submit" onclick="login()">
+        <script>
+            // console.log("i am in script tag");
+           var dbUserName = "ravi";
+           var dbPassword = "ravi123";
+           function login(){
+            event.preventDefault();
+            var uname = document.getElementById("uname").value;
+            console.log("username",uname);
+            var pwd = document.getElementById("pwd").value;
+            console.log("password",pwd);
+             
+            if(uname == dbUserName && pwd == dbPassword){
+               alert("Login Success");
+            }
+            else{
+               alert("Login Failure");
+            }
+
+           }
+
+        </script>
+
+     </form>
+  </body>
+</html>
