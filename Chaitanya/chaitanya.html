@@ -16,12 +16,26 @@
         <label for="">password:</label>
         <input type="password" id="pwd">
         <br><br>
+        <input type="checkbox" id="shpwd" onclick="showpassword()">show password
+        <br><br>
 
         <input type="submit" onclick="login()">
         <script>
             // console.log("i am in script tag");
            var dbUserName = "ravi";
            var dbPassword = "ravi123";
+              
+           function showpassword(){
+            // event.preventDefault();
+            var chkbox = document.getElementById("shpwd");
+            var password = document.getElementById("pwd");
+            if(chkbox.checked == true){
+               password.type = 'text';
+            }else{
+               password.type ='password'
+            }
+           }
+           
            function login(){
             event.preventDefault();
             var uname = document.getElementById("uname").value;
@@ -29,12 +43,18 @@
             var pwd = document.getElementById("pwd").value;
             console.log("password",pwd);
              
-            if(uname == dbUserName && pwd == dbPassword){
+            if(uname !='' && pwd !=''){
+               if(uname == dbUserName && pwd == dbPassword){
                alert("Login Success");
             }
             else{
                alert("Login Failure");
             }
+
+            }else{
+               alert("please provide username and password")
+            }
+            
 
            }
 
