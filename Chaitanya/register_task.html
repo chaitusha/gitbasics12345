@@ -1,0 +1,39 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <form for="">
+         username : <input type="text" id="uname">
+         <br><br>
+         password: <input type="password" id="pwd">
+         <br><br>
+         <input type="submit" value="Register" onclick="registerform()">
+
+    </form>
+    <script>
+         var dbUserName = "chaitanya";
+         var dbPassword = "abc123";
+         
+         function registerform(){
+            event.preventDefault();
+
+         var uname = document.getElementById("uname").value;
+         console.log(uname);
+
+         var pwd = document.getElementById("pwd").value;
+         console.log(pwd);
+
+         if(uname !='' && pwd !=''){
+            if(uname == dbUserName){
+            alert("username is not available");
+           }
+           else{
+            alert("username is available");
+           }
+          }else{
+            alert("Enter Valid Details");
+          }
+         }
+    </script>
+  </body>
+</html>
